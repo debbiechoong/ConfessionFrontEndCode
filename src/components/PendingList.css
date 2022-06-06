@@ -91,8 +91,8 @@
     padding: 5px 18px;
     border-radius: 12px;
     font-size: 0.9rem;
-    /* //i chg here */
-    float: right;
+    
+    float: left;
   }
 
   .container .btn3 {
