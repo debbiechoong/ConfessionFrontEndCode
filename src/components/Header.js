@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import './HeaderStyle.css'
 import { Link } from 'react-router-dom'
-import pic from '../assets/download2.jpg'
 
 
 class Header extends Component {

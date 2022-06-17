@@ -1,31 +1,4 @@
-:root {
-    --clr-primary: #651fff;
-    --clr-gray: #37474f;
-    --clr-gray-light: #b0bec5;
-  }
-  
-  * {
-    box-sizing: border-box;
-    font-family: "Open Sans", sans-serif;
-   
-    
-  }
-  
-  body {
-    background-color: #e8ecef;
-    
-   
-  }
-  
-  .wrapper-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 30rem);
-    justify-content: center;
-    gap: 1rem;
-    padding: 6rem 1rem;
-  }
-  
-  .container {
+.container {
     
     overflow: hidden;
     box-shadow: 0px 2px 8px 0px var(--clr-gray-light);
@@ -107,11 +80,3 @@
     font-size: 0.9rem;
     float: right;
   }
-  
-  
-
-  
-
-
-
-

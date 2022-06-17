@@ -22,9 +22,6 @@ const Navbar = () => {
             <li>
                 <Link to= '/adminList'>Admin</Link>
             </li>
-            <li>
-                <Link to= '/contact'>Sign in</Link>
-            </li>
 
         </ul>
         <div className='hamburger' onClick={handleClick}>
