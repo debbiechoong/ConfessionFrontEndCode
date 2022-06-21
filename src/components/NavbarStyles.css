@@ -8,12 +8,12 @@
     align-items: center;
     padding: 1rem;
     z-index: 10;
-
+    transition-timing-function: ease-in;
+    transition:0.5s
 }
 
 .nav-menu{
-    display: flex;
-    
+    display: flex; 
 }
 
 .nav-menu li{
@@ -68,7 +68,13 @@
         font-size: 2rem;
     }
 
-    
+   
+}
+
+.btn-2{
+    padding: 0.15rem;
+    position: relative;
+    left: -5%;
 }
 
 

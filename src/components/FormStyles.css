@@ -23,3 +23,40 @@ form input, textarea {
     border-color: rgba(255,255,255,.1);
     color: #f4f4f4;
 }
+
+.closebtn{
+    
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    padding: 3px 3px;
+    border-radius: 10px;
+    font-weight: 700;
+      
+      
+    
+}
+
+.title{ 
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    font-size: 1.7rem;
+    margin-top: 2.5%;
+}
+
+.picbtn{
+    width: 120px;
+  height: 40px;
+  margin: 10px;
+  border: none;
+  background-color: cornflowerblue;
+  color: white;
+  border-radius: 8px;
+  font-size: 20px;
+  cursor: pointer;
+  position: absolute;
+  bottom: -2%;
+  left: 39%;
+  
+}

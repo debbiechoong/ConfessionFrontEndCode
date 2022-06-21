@@ -1,4 +1,4 @@
-.popup-box {
+.popup-box2 {
     position: fixed;
     background: #00000050;
     width: 100%;
@@ -7,20 +7,20 @@
     left: 0;
   }
    
-  .box {
+  .box2 {
     position: relative;
     width: 50%;
     margin: 0 auto;
-    height: 40%;
+    height: 100%;
     max-height: 70vh;
-    margin-top: calc(100vh - 70vh - 20px);
+    margin-top: calc(100vh - 85vh - 20px);
     background: #fff;
     border-radius: 4px;
     padding: 20px;
     border: 1px solid #999;
     overflow: auto;
   }
-  
+
   
    
   .close-icon {
@@ -37,6 +37,9 @@
     text-align: center;
     border: 1px solid #999;
     font-size: 20px;
+    margin-top: -5;
   }
-  
-  
+
+  .content .b{
+    color: #999;
+  }

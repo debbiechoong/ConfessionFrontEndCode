@@ -1,37 +1,17 @@
-import React, { useState } from "react";
-import "./Modal.css";
+import React from "react";
+import './Modal.css'
 
-export default function Modal() {
-  const [modal, setModal] = useState(false);
-
-  const toggleModal = () => {
-    setModal(!modal);
-  };
-
-  if(modal) {
-    document.body.classList.add('active-modal')
-  } else {
-    document.body.classList.remove('active-modal')
-  }
-
+ 
+const Modal = props => {
   return (
-    <>
-
-      {modal && (
-        <div className="modal">
-          <div onClick={toggleModal} className="overlay"></div>
-          <div className="modal-content">
-            <h2>Confession Submitted</h2>
-            <p>
-             Thank You for sharing with us. Your confession will be published soon. 
-            </p>
-            <button className="close-modal" onClick={toggleModal}>
-              CLOSE
-            </button>
-          </div>
-        </div>
-      )}
-      
-    </>
+    <div className="popup-box">
+      <div className="box">
+        
+       {props.content}
+        
+      </div>
+    </div>
   );
-}
+};
+ 
+export default Modal;
