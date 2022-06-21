@@ -43,16 +43,11 @@ function Card(props){
         })
     }
 
+
     function publishPost(e) {
+
         e.preventDefault();
-        /*
-        let newPost = {
-            content: props.description,
-            datePosted: props.date,
-            replyId: props.replyId,
-        };
-        console.log(newPost);
-        */
+
         PostService.publishPost(props.submitId).then(res => {
             console.log(res);
         });
@@ -61,14 +56,13 @@ function Card(props){
     return(
         
         <div className="container">
-            
-        <img className= "image" src={props.img} alt="" />
-                <h1 className="name">{props.id}</h1>
-                <h2 className="date">{props.date}</h2>
-                <p className="description">{props.description}</p> 
-                {
-                    populateButton()
-                }
+            <img className= "image" src={props.img} alt="" /> 
+            <h1 className="name">{props.id}</h1>
+            <h2 className="date">{props.date}</h2>
+            <p className="description">{props.description}</p> 
+            {
+                populateButton()
+            }   
         </div>
     )
 }

@@ -1,12 +1,28 @@
-import axios from 'axios';
+import http from "../http-common";
+import axios from "axios";
 
-const POST_API_BASE_URL = 'http://localhost:8080/api/v1/files';
 
 class FileService {
 
-    uploadFile(file) {
-        return axios.post(POST_API_BASE_URL, file)
-    }
+    uploadFile(formData, submitId) {
+
+        return http.post("/files/" + submitId, formData, {
+          headers: {
+            "Content-Type": "multipart/form-data",
+          }
+        });
+      }
+
+      
+      getFiles() {
+        return http.get("/files");
+      }
+
+
+      getFilesBySubmitIds(submitIds) {
+        return axios.post("http://localhost:8080/api/v1/files/ids", 
+        submitIds);
+      }
 
 }
 

@@ -39,7 +39,7 @@ const Navbar = () => {
         }
         PostService.searchPosts(formattedSearchDetail).then(res => {
             setRelatedPosts(res.data);
-        })
+        });
       }
       
     const handleClick = () => setClick(!click)
@@ -48,18 +48,15 @@ const Navbar = () => {
   return (
     <div className={`nav ${show && 'header'}`}>
         <Link to ='/'><h1> HeartOUT </h1></Link>
-        <input className= 'searchBar'
-                type='text' 
-                placeholder='Search...'
-                value={searchDetail}
-                onChange={changeSearchDetail} />
-        <button className='btn-2' onClick={searchPost}>Search</button>
         <ul className={click ? 'nav-menu active' : 'nav-menu'}>
             <li>
                 <Link to= '/'>Home</Link>
             </li>
             <li>
                 <Link to= '/confession'>Confession</Link>
+            </li>
+            <li>
+                <Link to= '/search'>Search</Link>
             </li>
             <li>
                 <Link to= '/adminList'>Admin</Link>
