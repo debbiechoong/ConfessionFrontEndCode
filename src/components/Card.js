@@ -22,7 +22,6 @@ function Card(props){
             return (
                 <>
                     <button className='btn2'>Reply</button>
-                    <button className='btn3'>Read more</button> 
                 </>
             )
         }
@@ -56,7 +55,11 @@ function Card(props){
     return(
         
         <div className="container">
-            <img className= "image" src={props.img} alt="" /> 
+            {
+                props.file ? <img className= "image" src={`data:image/jpeg;base64,${props.file}`} alt="" />
+                : <img className= "image" src={props.img} alt="" />
+            }
+             
             <h1 className="name">{props.id}</h1>
             <h2 className="date">{props.date}</h2>
             <p className="description">{props.description}</p> 

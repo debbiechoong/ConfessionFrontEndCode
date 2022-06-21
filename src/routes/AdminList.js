@@ -3,16 +3,16 @@ import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
 
 import Header from '../components/Header'
-import Admin_List from '../components/AdminList'
+import AdminList from '../components/AdminList'
 
 
-export default function AdminList() {
+export default function AdminL() {
   return (
     <div>
        <Navbar/>
        
        <Header heading='Admin Panel' adminPendingList="Click to Pending List"/>
-        <Admin_List/>
+        <AdminList />
         <Footer/>
         
     </div>

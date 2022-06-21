@@ -29,12 +29,12 @@ function SearchPage() {
     
     return(
         <>
-        <div class="wrap">
-            <div class="search">
-                <input type="text" class="searchTerm" placeholder="Keyword, date (yyyy-mm-dd) or post id (#id)" value={searchDetail}
+        <div className="wrap">
+            <div className="search">
+                <input type="text" className="searchTerm" placeholder="Keyword, date (yyyy-mm-dd) or post id (#id)" value={searchDetail}
                 onChange={changeSearchDetail} />
-                    <button type="submit" class="searchButton" onClick={searchPost}>
-                <i class="fa fa-search"></i>
+                    <button type="submit" className="searchButton" onClick={searchPost}>
+                <i className="fa fa-search"></i>
             </button>
             </div>
         </div>
