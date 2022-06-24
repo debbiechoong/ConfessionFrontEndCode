@@ -4,6 +4,7 @@ import pic from '../assets/download2.jpg'
 import PostService from '../services/PostService'
 import FileService from '../services/FileService'
 import Card from './Card'
+const moment = require('moment');
 
 
 
@@ -38,6 +39,7 @@ function AdminList() {
                     }else {
                         newFiles.push(null);
                     }
+                    fileIndex += 1;
                 }
                 setFileInfos(newFiles);
                 return newFiles;
@@ -57,12 +59,15 @@ function AdminList() {
             {
         
                 posts.map((post, index) => {
-                    //console.log(post);
-                    // console.log(fileInfos[index]);
+                    var yearDay = post.datePosted.toString().slice(8, 12);
+                    var year = post.datePosted.toString().slice(0, 4);
+                    const hour = (parseInt(post.datePosted.toString().slice(12, 14)) + 8) % 24;
+                    const displayDate = new Date(parseInt(year), 0, parseInt(yearDay));
+                    const displayDateTime = moment(displayDate).format('YYYY-MM-DD') + " " + hour + post.datePosted.toString().slice(14);
                     if (post.hasFile === 1 && fileInfos[index] !== undefined) { 
                         return (
                             <Card key={post.submitId} file={fileInfos[index]} 
-                                    id={"HeartOut" + post.id} date={post.datePosted} 
+                                    id={"HeartOut" + post.id} date={displayDateTime} 
                                     description={post.content} replyId={post.replyId}
                                     role="admin" />
                         )
@@ -70,7 +75,7 @@ function AdminList() {
 
                     return (
                         <Card key={post.submitId} img={pic} 
-                                id={"HeartOut" + post.id} date={post.datePosted} 
+                                id={"HeartOut" + post.id} date={displayDateTime} 
                                 description={post.content} replyId={post.replyId}
                                 role="admin" />
                     )

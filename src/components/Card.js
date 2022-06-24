@@ -18,27 +18,20 @@ function Card(props){
                     <button className='btn3' onClick={publishPost}>Publish</button> 
                 </>
             )
-        } else if (role === "confession") {
-            return (
-                <>
-                    <button className='btn2'>Reply</button>
-                </>
-            )
-        }
+        } 
     }
 
     function deletePost (e) {
         e.preventDefault();
         const id = parseInt(props.id.substring(8));
         PostService.deletePost(id).then(res => {
-            console.log(res);
+            //console.log(res);
         });
     }
 
     function removeBatch() {   
         const id = parseInt(props.id.substring(8));
         PostService.removeBatch(id).then(res => {  
-            window.location.reload(true);  
         })
     }
 
@@ -46,9 +39,9 @@ function Card(props){
     function publishPost(e) {
 
         e.preventDefault();
-
         PostService.publishPost(props.submitId).then(res => {
             console.log(res);
+            window.location.reload(true);
         });
     }
 
@@ -62,7 +55,14 @@ function Card(props){
              
             <h1 className="name">{props.id}</h1>
             <h2 className="date">{props.date}</h2>
-            <p className="description">{props.description}</p> 
+            {
+                props.replyId !== -1 ? 
+                
+               
+               <><p className="description">{props.description} </p> <p className='replyid'>#Reply to HeartOut{props.replyId}</p></> 
+
+                : <p className="description">{props.description}</p>
+            }
             {
                 populateButton()
             }   

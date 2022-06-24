@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Anek+Latin:wght@200;300;400&display=swap');
 .container {
     
     overflow: hidden;
@@ -31,26 +32,41 @@
     margin: 1rem 2rem;
    
     font-weight: bold;
-    font-size: 1.2rem;
-    color: #37474f;
+    font-size: 1.0rem;
+    color: #1e5f7f;
   }
 
   .date {
     float: right;
-    margin: 1rem 2rem;
    
+    margin: 1rem 2rem;
     font-weight: bold;
     font-size: 1.0rem;
     color: #65696c;
   }
   
   .description {
-    float: left;
-    margin: 1rem 2rem;
-    font-size: 0.9rem;
-    color: #37474f;
+    text-align: center;
+    width: 90%;
+    margin: 1rem 1rem;
+    font-weight: 700;
+    font-size: 1.2rem;
+    color: #1c1d1d;
+    font-family: 'Anek Latin', sans-serif;
   }
   
+.btn1 {
+    display: flex;
+    flex: column;
+    margin: 30px;
+    color: #37474f;
+    font-family: inherit;
+    border-radius: 5px;
+    border-color: #aeb8be;
+    padding: 5px 18px;
+    border-radius: 12px;
+    font-size: 0.9rem;
+}
    
 
 .btn2 {
@@ -65,7 +81,8 @@
     border-radius: 12px;
     font-size: 0.9rem;
     float: left;
-  }
+    bottom: 0%;
+}
 
 .btn3 {
     display: flex;
@@ -79,4 +96,18 @@
     border-radius: 12px;
     font-size: 0.9rem;
     float: right;
+    bottom: 0%;
   }
+
+  .replyid{
+    display: inline-block;
+    flex: column;
+    color: #1e5f7f;
+    margin: 1rem 2rem;
+    text-align: left;
+    width: 100%;
+   
+    
+    
+  }
+

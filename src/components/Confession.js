@@ -4,6 +4,7 @@ import pic from '../assets/download2.jpg'
 import PostService from '../services/PostService'
 import Card from './Card'
 import FileService from '../services/FileService'
+const moment = require('moment');
 
 
 function Confession() {
@@ -13,6 +14,7 @@ function Confession() {
 
     useEffect(() => {
         PostService.getPosts().then((res) => {
+            console.log(res.data)
             const data = res.data;
             setPosts(res.data);
             return data;
@@ -37,6 +39,7 @@ function Confession() {
                     }else {
                         newFiles.push(null);
                     }
+                    fileIndex += 1;
                 }
                 setFileInfos(newFiles);
                 return newFiles;
@@ -56,24 +59,27 @@ function Confession() {
 
             {
         
-                posts.map((post, index) => {
-                    //console.log(post);
-                    // console.log(fileInfos[index]);
-                    if (post.hasFile === 1 && fileInfos[index] !== undefined) { 
+                    posts.reverse().map((post, index) => {
+                        var yearDay = post.datePosted.toString().slice(8, 12);
+                        var year = post.datePosted.toString().slice(0, 4);
+                        const hour = (parseInt(post.datePosted.toString().slice(12, 14)) + 8) % 24;
+                        const displayDate = new Date(parseInt(year), 0, parseInt(yearDay));
+                        const displayDateTime = moment(displayDate).format('YYYY-MM-DD') + " " + hour + post.datePosted.toString().slice(14);
+                        if (post.hasFile === 1 && fileInfos[posts.length - 1 -index] !== undefined) { 
+                            return (
+                                <Card key={post.submitId} file={fileInfos[posts.length - index - 1]} 
+                                        id={"HeartOut" + post.id} date={displayDateTime} 
+                                        description={post.content} replyId={post.replyId}
+                                        role="confession" />
+                            )
+                        }
+
                         return (
-                            <Card key={post.submitId} file={fileInfos[index]} 
-                                    id={"HeartOut" + post.id} date={post.datePosted} 
+                            <Card key={post.submitId} img={pic} 
+                                    id={"HeartOut" + post.id} date={displayDateTime} 
                                     description={post.content} replyId={post.replyId}
                                     role="confession" />
                         )
-                    }
-
-                    return (
-                        <Card key={post.submitId} img={pic} 
-                                id={"HeartOut" + post.id} date={post.datePosted} 
-                                description={post.content} replyId={post.replyId}
-                                role="confession" />
-                    )
                 }
                 )      
             }
