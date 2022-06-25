@@ -6,8 +6,6 @@ import FileService from '../services/FileService';
 import Modal from './Modal';
 import Popup from './Popup';
 
-const moment = require('moment');
-
 const Form = () => {
 
     // Posts related
@@ -130,7 +128,7 @@ const Form = () => {
                 } 
                 toggleThankyou("Thank you for your submission. Your post may or may not be posted.");         
             }).catch(err => {
-                toggleThankyou("Something went wrong!");
+                toggleThankyou(err.response.data.message);
             });
         });
 
