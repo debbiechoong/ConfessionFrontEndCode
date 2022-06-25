@@ -35,7 +35,7 @@ function PendingList() {
                 var newFiles = [];
                 var fileIndex = 0;
                 for (var i=0; i < data.postData.length; i++) {
-                    if (data.postData[i].hasFile === 1) {
+                    if (data.postData[i].hasFile === 1 && fileData[fileIndex] !== undefined) {
                         newFiles.push(fileData[fileIndex].data);
                     }else {
                         newFiles.push(null);
@@ -61,6 +61,7 @@ function PendingList() {
                     const displayDate = new Date(parseInt(year), 0, parseInt(yearDay));
                     const displayDateTime = moment(displayDate).format('YYYY-MM-DD') + " " + hour + post.datePosted.toString().slice(14);
                     if (post.hasFile === 1 && fileInfos[index] !== undefined) { 
+                        console.log(fileInfos[index]);
                         return (
                                 <Card key={post.submitId} file={fileInfos[index]} 
                                     id={"HeartOut" + post.submitId} date={displayDateTime} 

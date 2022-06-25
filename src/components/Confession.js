@@ -67,7 +67,7 @@ function Confession() {
                         const displayDateTime = moment(displayDate).format('YYYY-MM-DD') + " " + hour + post.datePosted.toString().slice(14);
                         if (post.hasFile === 1 && fileInfos[posts.length - 1 -index] !== undefined) { 
                             return (
-                                <Card key={post.submitId} file={fileInfos[posts.length - index - 1]} 
+                                <Card key={post.submitId} file={fileInfos[index]} 
                                         id={"HeartOut" + post.id} date={displayDateTime} 
                                         description={post.content} replyId={post.replyId}
                                         role="confession" />

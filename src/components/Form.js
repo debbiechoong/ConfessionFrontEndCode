@@ -96,9 +96,6 @@ const Form = () => {
                 realReplyId = replyId;
             }
 
-            // Convert from javscript date to mysql date format
-            // const newDate = new Date().toLocaleString().slice(0, 19).replace('/', '-').replace('/', '-').replace(', ', ' ');
-            // const newDate = moment().format('YYYY-MM-DD HH:mm:ss');
             const newDate = new Date().getTime();
             console.log(newDate);
             const hasFile = selectedFile ? 1 : 0;
@@ -112,7 +109,6 @@ const Form = () => {
                 hasFile: hasFile
             };
 
-            console.log(newPost);
             return newPost;
         }).then(newPost => {
             // Call the submitPost api 
@@ -137,8 +133,10 @@ const Form = () => {
     return (
         <div className='form'>
             <form>
-                <input type='text' placeholder='Reply Confession Post ID (Leave blank if not a reply)' value={replyId} onChange={changeReplyId}></input>
-                <textarea rows='6' placeholder='Type your confession here' value={content} onChange={changeContent} required/>
+                <input type='text' placeholder='Reply Confession Post ID (Leave blank if not a reply)' 
+                    value={replyId} onChange={changeReplyId}></input>
+                <textarea rows='6' placeholder='Type your confession here' 
+                    value={content} onChange={changeContent} required/>
                 
                 {/* upload picture button */}
                 <input className='popup'
